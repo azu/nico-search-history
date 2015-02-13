@@ -261,7 +261,7 @@ Sandbox("history", function (box) {
                 padding: 5px 15px 5px 5px;
                 background-color: #fff;
                 position: absolute;
-                top: 35px;
+                top: 50px;
                 right: 0;
                 z-index: 1;
             }
