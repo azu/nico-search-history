@@ -61,6 +61,7 @@ Sandbox.add("history", (function () {
             this.name = name;
             this.limit = limit;
             this.value = this.load() || [];
+            // if(typeof this.value === "string"){ console.log(this.value); GM_setValue(this.name, this.value) }
         },
         save: function (v) {
             v && GM_setValue(this.name, JSON.stringify(v));
@@ -94,7 +95,7 @@ Sandbox.add("history", (function () {
         // 同じものが既にあるかどうか
         checkIfExist: function (target) {
             var that = this;
-            if (this.value) {
+            if (Array.isArray(this.value)) {
                 return this.value.some(function (val, idx, ary) {
                     // 既にあったら先頭に入れ替える
                     if (val === target) {
